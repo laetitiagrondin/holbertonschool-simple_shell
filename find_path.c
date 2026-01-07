@@ -27,15 +27,36 @@ char *find_path(char *command)
 			free(path_copy);
 			return (NULL);
 		}
-		printf(full_path, "%s%s", dir, command);
+		sprintf(full_path, "%s/%s", dir, command);
 		if (access(full_path, X_OK) == 0)
 		{
-			free(full_path);
-			dir = strtok(NULL, ":");
+			free(path_copy);
+			return(full_path);
 		}
 		free(full_path);
 		dir = strtok(NULL, ":");
 	}
 	free(path_copy);
 	return(NULL);
+}
+
+/**
+ * main - Entry point
+ * Return: 0 (Success)
+ */
+int main(void)
+{
+	char *command = "ls";
+	char *path = find_path(command);
+
+	if (path != NULL)
+	{
+		printf("Full path to '%s' : %s", command, path);
+		free(path);
+	}
+	else
+	{
+		printf("The command '%s' does not exist in PATH\n", command);
+	}
+	return (0);
 }
