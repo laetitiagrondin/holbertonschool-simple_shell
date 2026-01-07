@@ -1,0 +1,32 @@
+#include "shell.h"
+/**
+ * exec - Fonction that executes a command with its arguments
+ * @args: an array of command arguments
+ */
+void exec(char **args)
+{
+	pid_t pid;
+	int status;
+
+	if (args[0] == NULL)
+	{
+		return;
+	}
+	pid = fork();
+	if (pid == 0)
+	{
+		if (execve(args[0], args, NULL) == -1)
+		{
+			perror("shell");
+			exit(1);
+		}
+	}
+	else if (pid > 0)
+	{
+		wait(&status);
+	}
+	else
+	{
+		perror("fork");
+	}
+}
