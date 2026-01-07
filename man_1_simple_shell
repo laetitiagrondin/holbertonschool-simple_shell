@@ -1,0 +1,32 @@
+.TH simple_shell 1
+
+.SH NAME
+simple_shell - a simple UNIX command interpreter
+
+.SH SYNOPSIS
+.B simple_shell
+
+.SH DESCRIPTION
+simple_shell is a basic UNIX shell implementation.
+It reads commands typed by the user, searches for their executables
+in the directories listed in the PATH environment variable,
+and executes them in a child process.
+If a command cannot be found, it prints an error message and waits
+for the next command. The shell loops until the user exits
+or an end-of-file (EOF) is reached.
+
+.SH BUILTINS
+exit
+	Exit the shell.
+env
+	Print the current environment.
+
+.SH EXAMPLES
+Exit the shell :
+.PP
+$ exit
+.PP
+Find the full path of a command :
+.PP
+$ ./find_path
+Full path to 'ls' : /bin/ls
