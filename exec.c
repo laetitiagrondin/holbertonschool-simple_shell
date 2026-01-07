@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * exec - Fonction that executes a command with its arguments
+ * exec - Function that executes a command with its arguments
  * @args: an array of command arguments
  */
 void exec(char **args)
@@ -29,4 +29,16 @@ void exec(char **args)
 	{
 		perror("fork");
 	}
+}
+
+/**
+ * main - Entry point
+ * Return: 0 (Success), 1 (Error)
+ */
+int main(void)
+{
+	char *command[] = {"ls", "-l", NULL};
+
+	exec(command);
+	return (0);
 }
