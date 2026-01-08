@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/wait.h>
+#include "shell.h"
 
 extern char **environ;
 
@@ -108,7 +104,7 @@ int main(int argc, char **argv)
 		if (interactive)
 			write(STDOUT_FILENO, "($) ", 4);
 
-		read = getline(&line, &len, stdin);a
+		read = getline(&line, &len, stdin);
 		if (read == -1)
 		{
 			if (interactive)
