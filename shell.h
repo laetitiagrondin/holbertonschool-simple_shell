@@ -13,8 +13,8 @@ void execute_command(char *cmd, char *prog_name);
 int main(int argc, char **argv);
 char *find_path(char *command);
 char *find_path(char *command);
-int main(void);
+int main(int argc, char **argv);
 void exec(char **args);
-int main(void);
+int main(int argc, char **argv);
 
 #endif
