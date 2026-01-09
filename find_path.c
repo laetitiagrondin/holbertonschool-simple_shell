@@ -39,29 +39,3 @@ char *find_path(char *command)
 	free(path_copy);
 	return(NULL);
 }
-
-/**
- * main - Entry point
- * @argc: number of arguments
- * @argv: array of argument strings
- * Return: 0 (Success)
- */
-int main(int argc, char **argv)
-{
-	char *command = "ls";
-	char *path = NULL;
-
-	(void)argc;
-	(void)argv;
-	path = find_path(command);
-	if (path != NULL)
-	{
-		printf("Full path to '%s' : %s", command, path);
-		free(path);
-	}
-	else
-	{
-		printf("The command '%s' does not exist in PATH\n", command);
-	}
-	return (0);
-}
