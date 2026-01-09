@@ -33,12 +33,16 @@ void exec(char **args)
 
 /**
  * main - Entry point
+ * @argc: number of arguments
+ * @argc: array of argument strings
  * Return: 0 (Success), 1 (Error)
  */
-int main(void)
+int main(int argc, char **argv)
 {
 	char *command[] = {"ls", "-l", NULL};
 
+	(void)argc;
+	(void)argv;
 	exec(command);
 	return (0);
 }
