@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 #include <errno.h>
 
-void execute_command(char *cmd, char *prog_name);
+void execute_command(char **args, char *prog_name, int line_num);
 int main(int argc, char **argv);
 char *find_path(char *command);
 char *find_path(char *command);
