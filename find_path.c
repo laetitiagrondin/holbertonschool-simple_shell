@@ -42,13 +42,18 @@ char *find_path(char *command)
 
 /**
  * main - Entry point
+ * @argc: number of arguments
+ * @argv: array of argument strings
  * Return: 0 (Success)
  */
-int main(void)
+int main(int argc, char **argv)
 {
 	char *command = "ls";
-	char *path = find_path(command);
+	char *path = NULL;
 
+	(void)argc;
+	(void)argv;
+	path = find_path(command);
 	if (path != NULL)
 	{
 		printf("Full path to '%s' : %s", command, path);
